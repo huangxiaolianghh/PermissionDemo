@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">PermissionDemo</string>
+
+
+    <!--权限申请理由和用处描述-->
+    <string name="permission_camera_des">请允许使用相机，以便…。</string>
+    <string name="permission_photo_des">请允许使用相册，以便…。</string>
+    <string name="permission_contacts_des">请允许使用通讯录，以便…。</string>
+    <string name="permission_location_des">请允许使用定位，以便…。</string>
+    <string name="permission_microphone_des">请允许使用麦克风，以便…。</string>
+    <string name="permission_storage_des">请允许使用存储，以便…。</string>
+    <string name="permission_phone_des">请允许使用电话，以便打电话。</string>
+    <string name="permission_sms_des">请允许使用短信，以便…。</string>
+
+    <string name="dialog_permission_allow">允许</string>
+    <string name="dialog_permission_refuse">拒绝</string>
+    <string name="dialog_permission_title">申请权限</string>
+    <string name="dialog_permission_remind_prefix">该功能需要访问您的</string>
+
+    <string name="dialog_permission_remind_suffix">，请通过应用设置将权限打开。</string>
+    <string name="dialog_title">温馨提示</string>
+
+    <string name="dialog_btn_cancel">取消</string>
+    <string name="dialog_btn_confirm">确认</string>
+    <string name="dialog_btn_setting">设置</string>
+
+</resources>
