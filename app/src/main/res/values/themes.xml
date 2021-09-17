@@ -13,4 +13,30 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+
+
+    <style name="DialogTheme" parent="@android:style/Theme.Dialog">
+        <!-- 是否不显示title，这个是最重要的 -->
+        <item name="android:windowNoTitle">true</item>
+        <!-- 设置dialog显示区域外部的背景（透明），注意这里指的是dialog根布局的背景 ，
+              若ContentView有圆角，圆角外部区域显示这个颜色 -->
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <!-- 设置dialog的背景（透明），注意这里不仅包含dialog根布局的背景
+        ，还包含ContentView圆角外部的背景。此颜色值会覆盖掉windowBackground的值 -->
+        <item name="android:background">@android:color/transparent</item>
+        <!-- 设置灰度的值，当为1时，界面除了我们的dialog内容是高亮显示之外
+        ，其余区域都是黑色的，完全看不到其他内容，系统的默认值是0.5 -->
+        <item name="android:backgroundDimAmount">0.7</item>
+        <!-- 是否允许背景灰暗，即是否让显示区域以外使用上面设置的黑色半透明背景
+        ，设为false时，:backgroundDimAmount的值等价于0 -->
+        <item name="android:backgroundDimEnabled">true</item>
+        <!-- 是否有遮盖 -->
+        <item name="android:windowContentOverlay">@null</item>
+        <!-- 设置Dialog的windowFrame框（无） -->
+        <item name="android:windowFrame">@null</item>
+        <!-- 是否浮现在activity之上，必须设为true，否则自己独立占一个界面，这根本就不像是一个对话框了 -->
+        <item name="android:windowIsFloating">true</item>
+        <!-- 是否半透明，貌似没什么卵用 -->
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
 </resources>

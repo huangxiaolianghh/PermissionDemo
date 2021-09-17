@@ -7,4 +7,24 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <!--弹框相关颜色-->
+    <color name="dialog_title_text">#101a3e</color>
+    <color name="dialog_title_bg">#F9FAFB</color>
+    <color name="dialog_content_text">#221715</color>
+
+    <color name="dialog_btn_cancel_text">#221715</color>
+    <color name="dialog_btn_cancel_stroke">#221715</color>
+    <color name="dialog_btn_cancel_stroke_checked">#221715</color>
+    <color name="dialog_btn_cancel_bg">#FFFFFF</color>
+    <color name="dialog_btn_cancel_bg_checked">#F0F0F0</color>
+
+    <color name="dialog_btn_confirm_text">#221715</color>
+    <color name="dialog_btn_confirm_stroke">#221715</color>
+    <color name="dialog_btn_confirm_stroke_checked">#221715</color>
+    <color name="dialog_btn_confirm_bg">#4996F3</color>
+    <color name="dialog_btn_confirm_bg_checked">#4996F3</color>
+
+    <color name="dialog_btn_confirm_text_enable">#80221715</color>
+    <color name="dialog_btn_confirm_bg_enable">#384996F3</color>
 </resources>

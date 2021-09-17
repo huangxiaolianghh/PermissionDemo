@@ -20,7 +20,6 @@ import java.util.Set;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.StringDef;
-import androidx.appcompat.app.AlertDialog;
 
 /**
  * @author : HHotHeart
@@ -155,14 +154,9 @@ public class PermissionManager {
                                           final String[] permissionArray,
                                           @PermissionType String... permissions) {
         //权限申请未通过，弹框提示
-        AlertDialog dialog = new AlertDialog.Builder(activity).setTitle(activity.getString(R.string.dialog_permission_title))
-                .setMessage(remindMsg)
-                .setNegativeButton(activity.getString(R.string.dialog_permission_refuse), (dialogInterface, i) -> {
-                    dialogInterface.dismiss();
-                    callback.onDenied();
-                })
-                .setPositiveButton(activity.getString(R.string.dialog_permission_allow), (dialogInterface, i) -> {
-                    dialogInterface.dismiss();
+        AppDialogManager.getInstance().showPermissionRemindDialog(activity, remindMsg,
+                (dialogInterface, i) -> callback.onDenied(),
+                (dialogInterface, i) -> {
                     PermissionUtils.permission(permissionArray).callback(new PermissionUtils.FullCallback() {
                         @Override
                         public void onGranted(@NonNull List<String> permissionsGranted) {
@@ -179,9 +173,7 @@ public class PermissionManager {
                             }
                         }
                     }).request();
-                })
-                .create();
-        dialog.show();
+                });
     }
 
     /**
@@ -218,18 +210,9 @@ public class PermissionManager {
             return;
         }
         permissionRequestMsg.append(StringUtils.getString(R.string.dialog_permission_remind_suffix));
-        AlertDialog dialog = new AlertDialog.Builder(activity).setTitle(activity.getString(R.string.dialog_permission_title))
-                .setMessage(permissionRequestMsg.toString())
-                .setNegativeButton(activity.getString(R.string.dialog_btn_cancel), (dialogInterface, i) -> {
-                    dialogInterface.dismiss();
-                    callback.onDenied();
-                })
-                .setPositiveButton(activity.getString(R.string.dialog_btn_setting), (dialogInterface, i) -> {
-                    dialogInterface.dismiss();
-                    openAppSystemSettings();
-                })
-                .create();
-        dialog.show();
+        AppDialogManager.getInstance().showPermissionSettingRemind(activity, permissionRequestMsg.toString(),
+                (dialogInterface, i) -> callback.onDenied(),
+                (dialogInterface, i) -> openAppSystemSettings());
     }
 
     /**
